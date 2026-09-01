@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keitumetse — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============ NAV ============ -->
+  <header class="site-header">
+    <div class="wrap header-row">
+      <a href="index.html" class="mark">K.K</a>
+      <nav class="site-nav">
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero wrap">
+    <div class="hero-main">
+      <p class="hero-kicker">Portfolio — 2026</p>
+      <h1>I check things carefully,<br>then I build them.</h1>
+      <p class="hero-lede">
+        Developer with a QA background. I write code the way I write test
+        documentation — with the assumption that something will break, and
+        a plan for finding it before someone else does.
+        <!-- Replace this with your own one/two-sentence pitch -->
+      </p>
+      <div class="hero-actions">
+        <a href="#work" class="btn btn-primary">See the work</a>
+        <a href="#contact" class="btn btn-ghost">Get in touch</a>
+      </div>
+    </div>
+
+    <aside class="spec-tag">
+      <p class="spec-tag-label">Inspection Tag</p>
+      <dl>
+        <div class="spec-row"><dt>Name</dt><dd>Keitumetse Koena</dd></div>
+        <div class="spec-row"><dt>Based</dt><dd>Johannesburg, ZA</dd></div>
+        <div class="spec-row"><dt>Stack</dt><dd>HTML · CSS · JS</dd></div>
+        <div class="spec-row"><dt>Focus</dt><dd>Web dev · QA · Data</dd></div>
+        <div class="spec-row"><dt>Status</dt><dd class="status-ok">Open to work</dd></div>
+      </dl>
+    </aside>
+  </section>
+
+  <!-- ============ WORK/PROJECT LOG ============ -->
+  <section id="work" class="work-log wrap">
+    <div class="section-head">
+      <h2>Project Log</h2>
+      <p class="section-note">Each entry is a real build — what it does, what I used, and what I'd fix next.</p>
+    </div>
+
+    <div class="log-filters" id="logFilters">
+      <button class="filter-chip is-active" data-filter="all">All</button>
+      <button class="filter-chip" data-filter="frontend">Front-end</button>
+      <button class="filter-chip" data-filter="js">JavaScript</button>
+      <button class="filter-chip" data-filter="data">Data</button>
+    </div>
+      <!-- ============ WORK/PROJECT LOG ============ -->
+
+
+    <ol class="log-list" id="logList">
+
+      <! -- 01 - Revolutions, standalone site -->
+      <li class="log-entry" data-tags="frontend">
+        <span class="log-index">01</span>
+        <div class="log-thumb">
+          <!-- swap for a real screenshot, e.g. projects/revolutions/thumb.png -->
+          <span class="log-thumb-placeholder">Screenshot</span>
+        </div>
+        <div class="log-body">
+          <div class="log-heading-row">
+            <h3>Revolutions Youth - Liberty Church</h3>
+            <span class="log-status status-ok">Live</span>
+          </div>
+          <p class="log-desc">
+            A Youth ministry site built in Webflow for a client. I handled the build and styling, and the client provided the content. The site is responsive and includes a contact form. Built to showcase my ability to create a professional-looking site for a client, even without a CMS or backend. Built in webflow for Liberty Church, Live since 2022 - real client, real omgoing traffic.
+          </p>
+          <ul class="log-tags">
+            <li>Webflow</li>
+            <li>CMS</li>
+          </ul>
+          <div class="log-links">
+            <a href="https://revs-b7afa1.webflow.io" target="_blank">Live site →</a>
+          </div>
+        </div>
+      </li>
+
+<!-- 02 - 3 JS Fundamentals -->
+      <li class="log-entry" data-tags="js frontend">
+        <span class="log-index">02</span>
+        <div class="log-thumb">
+          <!-- swap for a real screenshot, e.g. projects/js-fundamentals/thumb.png -->
+          <span class="log-thumb-placeholder">Screenshot</span>
+        </div>
+        <div class="log-body">
+          <div class="log-heading-row">
+            <h3>JS fundamentals: three small tools</h3>
+            <span class="log-status status-ok">Shipped</span>
+          </div>
+          <p class="log-desc">
+            Three practice builds in one entry, not padded out as separate
+            projects: a working calculator (button state, chained operators),
+            a login form with client-side credential checking, and a
+            weather-advice picker driven by a switch statement. Built to get
+            comfortable with DOM manipulation and event handling before
+            moving on to larger apps.
+          </p>
+          <ul class="log-tags">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>DOM</li>
+          </ul>
+          <div class="log-links">
+            <a href="calculator.html">Calculator →</a>
+            <a href="loginform.html">Login form →</a>
+            <a href="switch.html">Weather picker →</a>
+          </div>
+        </div>
+      </li>
+
+      <! -- 03 - zoo project, standalone, in progress -->
+      <li class="log-entry" data-tags="frontend">
+        <span class="log-index">03</span>
+        <div class="log-thumb">
+          <!-- swap for a real screenshot, e.g. projects/zoo/thumb.png -->
+          <span class="log-thumb-placeholder">Screenshot</span>
+        </div>
+        <div class="log-body">
+          <div class="log-heading-row">
+            <h3>Zoo project</h3>
+            <span class="log-status status-wip">In progress - Fixing bugs</span>
+          </div>
+          <p class="log-desc">
+          A multi-page static site built early on. Housed here deliberately
+          unfixed, with a running log of what I found and corrected — the point
+          is showing the QA process, not a finished product.
+          </p>
+          <ul class="log-tags">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>Responsive design</li>
+          </ul>
+          <div class="log-links">
+            <a href="#" target="_blank">View site →</a>
+          </div>
+        </div>
+      </li>
+
+      <! -- 04 - Data project, planned -->
+      <li class="log-entry" data-tags="data">
+        <span class="log-index">04</span>
+        <div class="log-thumb">
+          <!-- swap for a real screenshot, e.g. projects/data-project/thumb.png -->
+          <span class="log-thumb-placeholder">Screenshot</span>
+        </div>
+        <div class="log-body">
+          <div class="log-heading-row">
+            <h3>Project Dolphin Potato</h3>
+            <span class="log-status status-wip">Planned</span>
+          </div>
+          <p class="log-desc">
+            IDK
+          </p>
+          <ul class="log-tags">
+            <li>Python</li>
+            <li>SQL</li>
+            <li>Data analysis</li>
+          </ul>
+          <div class="log-links">
+            <a href="#" target="_blank">View project →</a>
+          </div>
+        </div>
+      </li> 
+   
+
+    </ol>
+    
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section id="about" class="about wrap">
+    <div class="section-head">
+      <h2>About</h2>
+    </div>
+    <div class="about-grid">
+      <p class="about-text">
+        <!-- Replace with real background. Keep it specific: what you've built,
+             where, and what you're moving toward — not a list of adjectives. -->
+        I came into development through QA documentation work, which is why
+        I care more about whether something actually works than whether it
+        looks finished. Outside of client work I'm building toward data
+        analysis — most recently through the FNB App Academy coding programme.
+      </p>
+      <ul class="about-facts">
+        <li><span>Qualifications</span>FNB App Academy (NQF 5) · Generic Management (NQF 4) · End User Computing (NQF 3)</li>
+        <li><span>Recent</span>QA documentation — Becton Dickinson (Africa/EMEA)</li>
+        <li><span>Also</span>AV & livestream production, Webflow site builds</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ SKILLS ============ -->
+  <section id="skills" class="skills wrap">
+    <div class="section-head">
+      <h2>Skills</h2>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <h3>Build</h3>
+        <ul><li>HTML / CSS</li><li>JavaScript</li><li>Responsive layout</li></ul>
+      </div>
+      <div class="skill-group">
+        <h3>Verify</h3>
+        <ul><li>QA documentation</li><li>Manual test cases</li><li>Bug reporting</li></ul>
+      </div>
+      <div class="skill-group">
+        <h3>Learning</h3>
+        <ul><li>Data analysis</li><li>Python basics</li><li>SQL basics</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section id="contact" class="contact wrap">
+    <div class="contact-inner">
+      <h2>Let's talk.</h2>
+      <p>The fastest way to reach me is email — I'll usually reply within a day.</p>
+      <div class="contact-links">
+        <a href="mailto:keitumetsekoena2@gmail.com" class="btn btn-primary">keitumetsekoena2@gmail.com</a>
+        <a href="tel:0813247035" class="btn btn-ghost">081 324 7035</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer wrap">
+    <p>&copy; 2026 Keitumetse. Built by hand.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

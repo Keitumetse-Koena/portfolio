@@ -227,3 +227,25 @@ portfolio diary as they get resolved)**
   restoring a previous scroll position on refresh (a hard refresh plus
   manual scroll rules that out) before treating the CSS fix as the
   full story.
+
+---
+
+## Main portfolio — structural HTML bugs (multi-attempt fix)
+
+- **Bug 1:** entry 05 (Reflex Lights) ended up outside the `<ol>` project
+  list entirely after an earlier edit — closed the list before entry 05
+  instead of after it. First fix attempt changed entry 05's wrapper tag
+  from `<li>` to `<ol>` instead of just moving the closing tag, which
+  made it worse (a list can't be a list-item). Corrected properly:
+  entry 05 back to `<li>`, single `</ol>` moved to close after it.
+- **Bug 2:** entries 01–03 were missing `id` attributes entirely, so the
+  Skills section's internal links (`#proj-fundamentals`, `#proj-zoo`)
+  were dead — pointed at anchors that didn't exist. Added
+  `id="proj-revs"`, `id="proj-fundamentals"`, `id="proj-zoo"` to match
+  the existing `id="proj-f1"` / `id="proj-reflex"` pattern.
+- **Separate bug, same session:** the Reflex Lights game's entire
+  stylesheet had been accidentally appended to the end of the main
+  portfolio's `style.css` — including a second `.wrap` rule with
+  `max-width: 700px`, which (later in the cascade) overrode the real
+  `.wrap` rule and squeezed the whole site into a narrow column.
+  Removed the duplicated block entirely.

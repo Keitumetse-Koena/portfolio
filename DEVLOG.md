@@ -111,3 +111,119 @@ portfolio diary as they get resolved)**
   mistake.
 - Corrected the link from the main portfolio page to `zoo/index.html`
   once the final folder location was confirmed.
+
+---
+
+## Portfolio Page (index.html)
+
+**Placeholder cleanup**
+- Removed entry 04's leftover placeholder ("Third project title",
+  `href="#"`, status "Planned") rather than relabeling it "Shipped" —
+  a fake status next to honestly-documented entries would have
+  undercut the whole point of the diary framing.
+- Fixed contact email link — was still the skeleton's placeholder
+  `you@example.com`; corrected to the real address, both `href` and
+  visible text.
+- Added GitHub and LinkedIn links to the Contact section (not the
+  footer — decided contact info belongs where someone's actually
+  looking to reach out, footer stays plain copyright only). Removed
+  the trailing "→" arrows from both buttons per a later styling pass.
+
+**Skills section — rebuilt from generic to evidence-linked**
+- Original skill list was the unedited starter content. Rewrote it to
+  reflect what was actually built this session: added REST API
+  integration, Chart.js/canvas data visualization, Git & GitHub,
+  debugging live projects — none of which were listed before despite
+  being demonstrably backed by the F1 app and the zoo bug-fix log.
+- Left "Learning" (Python, SQL) as plain unlinked text — nothing built
+  yet demonstrates those, so no project or repo link was attached to
+  them. Same honesty principle as the rest of the site: don't imply
+  evidence that doesn't exist yet.
+- Added `id` anchors to each project log entry (`proj-revs`,
+  `proj-fundamentals`, `proj-zoo`, `proj-f1`) so skills can link to a
+  specific card instead of just the general Work section.
+- Added a `:target` CSS animation (brief highlight-pulse) so landing on
+  a card via a skill link is visually obvious, not just a silent jump.
+  Respects `prefers-reduced-motion`.
+- **Bug found and fixed twice in the same spot:** editing entry 04's
+  tags accidentally broke its HTML structure — an errant `</li>`
+  closed `.log-entry` right after the tag list, orphaning the
+  "View project →" link outside the card entirely (it rendered full-
+  width below the section divider instead of inside the card). Root
+  caused to exactly one misplaced closing tag, fixed by rebuilding the
+  whole entry as a single clean block rather than patching around it.
+
+**Deep linking — skills into specific app screens, not just cards**
+- Initial version only scrolled to a project's card on the portfolio
+  page itself. Reworked per a follow-up request: skills that are
+  proven by one specific capability now link directly into the F1 app
+  at the relevant tab, not just to the portfolio card.
+- Added URL query param handling to the F1 app (`?tab=weather`,
+  `?tab=location&autoload=1`) — read on page load, auto-activates the
+  named tab and, where `autoload=1` is present, auto-selects the first
+  lap so the destination isn't just an empty screen on arrival.
+- Skill → destination mapping: JavaScript (DOM/fetch) → Laps tab,
+  autoloaded; REST API integration → Weather tab; Data visualization
+  → Track Map tab, autoloaded. Git & GitHub and the three QA-related
+  skills link to the actual GitHub repo and `DEVLOG.md` (including a
+  direct anchor into the Zoo section for the bug-related ones) rather
+  than to an in-app tab, since those are proven by process/history, not
+  a single screen.
+
+---
+
+## Reflex Lights (new mini-project)
+
+- Added as its own small project, not bundled into an existing entry —
+  reaction-time game modelled on an F1 start sequence: five lights
+  fill in one at a time (staggered, same pacing idea as a real start),
+  then go dark after a randomized delay; click or press spacebar as
+  fast as possible.
+- Real jump-start penalty logic, not just cosmetic: clicking during the
+  light sequence (before they go dark) is caught and reported as a
+  false start rather than silently ignored or scored.
+- Personal best persisted via `localStorage` — noted this is safe here
+  specifically because it's a real deployed static page, not a
+  sandboxed preview environment.
+- Logged as entry 05 in the main Work log, tagged JavaScript / Timing
+  & state / localStorage — distinct skill evidence from the other four
+  entries (event handling and time-based state, not data fetching or
+  QA process).
+- Documented limitation: browser timing precision varies slightly by
+  browser/OS (anti-fingerprinting protections), so results are a
+  good-faith approximation, not lab-grade accurate — worth knowing
+  before claiming precision if asked about it directly.
+
+---
+
+## Reflex Lights — bug fix
+
+- **Bug found in testing:** every click registered as an instant false
+  start, and the lights appeared not to work at all. Root cause: the
+  Start button sits inside the reaction zone, and both had click
+  listeners. Clicking Start fired the round, then the same click
+  bubbled up to the reaction-zone's own listener and immediately fired
+  a false-start check — before the lights had a chance to run.
+- Fixed by stopping the Start button's click from propagating to its
+  parent (`e.stopPropagation()`).
+- Also added spacebar as a full alternate control, not just for
+  reacting — space now starts a round too, matching the original
+  request that the game not require a mouse at all.
+
+---
+
+## Main portfolio — scroll/header bug
+
+- **Bug found in testing:** page wouldn't scroll fully to the top —
+  header stayed slightly cut off even after reaching what looked like
+  position 0.
+- Likely cause: CSS scroll anchoring fighting the sticky header once
+  the Google Fonts (Space Grotesk, Source Serif 4) finish loading
+  asynchronously and cause a small layout shift after first paint.
+- Fix: `overflow-anchor: none;` added to `body` in `style.css` to stop
+  the browser from auto-compensating scroll position during that
+  shift.
+- Noted as needing a second check: confirm this wasn't just Chrome
+  restoring a previous scroll position on refresh (a hard refresh plus
+  manual scroll rules that out) before treating the CSS fix as the
+  full story.

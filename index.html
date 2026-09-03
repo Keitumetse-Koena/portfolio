@@ -162,7 +162,7 @@
       </li>
 
       <! -- 04 - Data project, planned -->
-      <li class="log-entry" data-tags="data">
+          <li class="log-entry" data-tags="js frontend data" id="proj-f1">
         <span class="log-index">04</span>
         <div class="log-thumb">
           <!-- swap for a real screenshot, e.g. projects/data-project/thumb.png -->
@@ -183,20 +183,44 @@
             return 404s from OpenF1's side rather than working; left visible with honest error states 
             instead of hidden, and logged as an open item to investigate.
           </p>
-          <ul class="log-tags">
-            <li>Python</li>
-            <li>SQL</li>
-            <li>Data analysis</li>
-          </ul>
+            <ul class="log-tags">
+              <li>JavaScript</li>
+              <li>REST API</li>
+              <li>Chart.js</li>
+            </ul>
           <div class="log-links">
-            <a href="F1-app/index.html" target="_blank">View project →</a>
+          <a href="F1-app/index.html" target="_blank">View project →</a>
           </div>
         </div>
       </li> 
-
-
     </ol>
-    
+
+    <!-- 05 - Data project, planned -->
+     <li class="log-entry" data-tags="js frontend" id="proj-reflex">
+  <span class="log-index">05</span>
+  <div class="log-thumb">
+    <span class="log-thumb-placeholder">Screenshot</span>
+  </div>
+  <div class="log-body">
+    <div class="log-heading-row">
+      <h3>Reflex Lights</h3>
+      <span class="log-status status-ok">Live</span>
+    </div>
+    <p class="log-desc">
+      A reaction-time game modelled on an F1 start sequence — five lights
+      fill in, then go dark at an unpredictable moment. Tracks reaction
+      time in milliseconds and penalizes jump starts, same as a real one.
+    </p>
+    <ul class="log-tags">
+      <li>JavaScript</li>
+      <li>Timing / state</li>
+      <li>localStorage</li>
+    </ul>
+    <div class="log-links">
+      <a href="reflex-lights/index.html" target="_blank">Play →</a>
+    </div>
+  </div>
+</li>
   </section>
 
   <!-- ============ ABOUT ============ -->
@@ -223,23 +247,31 @@
 
   <!-- ============ SKILLS ============ -->
   <section id="skills" class="skills wrap">
-    <div class="section-head">
-      <h2>Skills</h2>
-    </div>
-    <div class="skills-grid">
-      <div class="skill-group">
-        <h3>Build</h3>
-        <ul><li>HTML / CSS</li><li>JavaScript</li><li>Responsive layout</li></ul>
-      </div>
-      <div class="skill-group">
-        <h3>Verify</h3>
-        <ul><li>QA documentation</li><li>Manual test cases</li><li>Bug reporting</li></ul>
-      </div>
-      <div class="skill-group">
-        <h3>Learning</h3>
-        <ul><li>Data analysis</li><li>Python basics</li><li>SQL basics</li></ul>
-      </div>
-    </div>
+   <div class="skills-grid">
+  <div class="skill-group">
+  <h3>Build</h3>
+  <ul>
+    <li><a href="#proj-fundamentals">HTML / CSS</a></li>
+    <li><a href="F1-app/index.html?tab=laps&autoload=1">JavaScript (DOM, fetch)</a></li>
+    <li><a href="F1-app/index.html?tab=weather">REST API integration</a></li>
+    <li><a href="F1-app/index.html?tab=location&autoload=1">Data visualization (Chart.js, canvas)</a></li>
+    <li><a href="https://github.com/Keitumetse-Koena/portfolio" target="_blank">Git & GitHub</a></li>
+  </ul>
+</div>
+<div class="skill-group">
+  <h3>Verify</h3>
+  <ul>
+    <li><a href="https://github.com/Keitumetse-Koena/portfolio/blob/main/DEVLOG.md" target="_blank">QA documentation</a></li>
+    <li><a href="#proj-fundamentals">Manual test cases</a></li>
+    <li><a href="https://github.com/Keitumetse-Koena/portfolio/blob/main/DEVLOG.md#zoo-website" target="_blank">Bug reporting</a></li>
+    <li><a href="https://github.com/Keitumetse-Koena/portfolio/blob/main/DEVLOG.md#zoo-website" target="_blank">Debugging live projects</a></li>
+  </ul>
+</div>
+  <div class="skill-group">
+    <h3>Learning</h3>
+    <ul><li>Data analysis</li><li>Python basics</li><li>SQL basics</li></ul>
+  </div>
+</div>
   </section>
 
   <!-- ============ CONTACT ============ -->
@@ -250,6 +282,8 @@
       <div class="contact-links">
         <a href="mailto:keitumetsekoena2@gmail.com" class="btn btn-primary">keitumetsekoena2@gmail.com</a>
         <a href="tel:0813247035" class="btn btn-ghost">081 324 7035</a>
+        <a href="https://www.linkedin.com/in/keitumetse-koena-628407246/" target="_blank" class="btn btn-ghost">LinkedIn</a>
+        <a href="https://github.com/Keitumetse-Koena" target="_blank" class="btn btn-ghost">GitHub</a>
       </div>
     </div>
   </section>
@@ -257,7 +291,6 @@
   <footer class="site-footer wrap">
     <p>&copy; 2026 Keitumetse. Built by hand.</p>
   </footer>
-
   <script src="script.js"></script>
 </body>
 </html>

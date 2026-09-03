@@ -27,3 +27,32 @@ filterChips.forEach(chip => {
     });
   });
 });
+
+yearSelect.addEventListener('change', loadSessions);
+sessionSelect.addEventListener('change', () => {
+  currentSessionKey = sessionSelect.value;
+  tabCache = {};
+  loadDrivers();
+});
+
+// ---------------------------------------------------------
+// Deep linking — lets the portfolio's Skills section jump
+// straight into a specific tab, with a lap pre-selected where
+// that's needed to actually show something on arrival.
+// ---------------------------------------------------------
+function autoSelectFirstLap() {
+  const firstRow = document.querySelector('#lapsTableBody tr');
+  if (firstRow) firstRow.click();
+}
+
+const urlParams = new URLSearchParams(window.location.search);
+const deepLinkTab = urlParams.get('tab');
+const deepLinkAutoload = urlParams.get('autoload') === '1';
+
+loadSessions().then(() => {
+  if (!deepLinkTab) return;
+  if (deepLinkAutoload && currentLaps.length) {
+    autoSelectFirstLap();
+  }
+  activateTab(deepLinkTab);
+});

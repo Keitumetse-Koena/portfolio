@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reflex Lights</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="app-header">
+    <a href="../index.html" class="back-link">← Back to portfolio</a>
+    <h1>Reflex Lights</h1>
+    <p class="app-sub">Five lights, same as an F1 start. They light up one at a time — when all five go dark, react as fast as you can. Click too early and it's a jump start.</p>
+  </header>
+
+  <main class="wrap">
+
+    <div class="lights-rig" id="lightsRig">
+      <div class="light" data-index="0"></div>
+      <div class="light" data-index="1"></div>
+      <div class="light" data-index="2"></div>
+      <div class="light" data-index="3"></div>
+      <div class="light" data-index="4"></div>
+    </div>
+
+    <div class="reaction-zone" id="reactionZone">
+      <p id="statusText">Press start when you're ready.</p>
+      <button id="startBtn" class="btn-start">Start</button>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat-block">
+        <span class="stat-label">Last reaction</span>
+        <span class="stat-value" id="lastTime">—</span>
+      </div>
+      <div class="stat-block">
+        <span class="stat-label">Personal best</span>
+        <span class="stat-value" id="bestTime">—</span>
+      </div>
+      <div class="stat-block">
+        <span class="stat-label">Attempts</span>
+        <span class="stat-value" id="attemptCount">0</span>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
